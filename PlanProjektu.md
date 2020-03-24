@@ -1,4 +1,3 @@
-# <center> <h1>Ramowy plan kalkulatora macierzy</h1> </center>
 # <h4>Temat 13: Kalkulator macierzowy</h4>
 
 Funkcjonalności:
@@ -9,3 +8,4 @@ Funkcjonalności:
 5. Wczytanie macierzy z pliku. 
 6. Jedna zaproponowane przez grupę.
 
+# <center> <h1>Ramowy plan kalkulatora macierzy</h1> </center>
