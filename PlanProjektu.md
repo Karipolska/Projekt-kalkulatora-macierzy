@@ -1,4 +1,4 @@
-# <center> Ramowy plan kalkulatora macierzy </center>
+# <center> <h5>Ramowy plan kalkulatora macierzy</h5> </center>
 
 # <h1>Temat 13: Kalkulator macierzowy</h1>
 
