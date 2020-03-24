@@ -1,5 +1,5 @@
 # <center> <h1>Ramowy plan kalkulatora macierzy</h1> </center>
-
+#<span style="color: kolor">lime</span>
 # <h4>Temat 13: Kalkulator macierzowy</h4>
 
 Funkcjonalności:
