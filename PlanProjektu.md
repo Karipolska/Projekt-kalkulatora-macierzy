@@ -1,4 +1,4 @@
-# <h4>Temat 13: Kalkulator macierzowy</h4>
+# <h1>Temat 13: Kalkulator macierzowy</h1>
 
 Funkcjonalności:
 1. Przeprowadzanie działań: dodawanie, odejmowanie, mnożenie, odwracanie, potęgowanie (można używać bibliotek numerycznych do przeprowadzenia operacji).
