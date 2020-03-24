@@ -1,6 +1,6 @@
-# <center> <h5>Ramowy plan kalkulatora macierzy</h5> </center>
+# <center> <h1>Ramowy plan kalkulatora macierzy</h1> </center>
 
-# <h1>Temat 13: Kalkulator macierzowy</h1>
+# <h4>Temat 13: Kalkulator macierzowy</h4>
 
 Funkcjonalności:
 1. Przeprowadzanie działań: dodawanie, odejmowanie, mnożenie, odwracanie, potęgowanie (można używać bibliotek numerycznych do przeprowadzenia operacji).
