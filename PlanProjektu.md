@@ -20,3 +20,5 @@ Funkcjonalności:
 2. Norbert Podgórski
 3. Bartosz Sroka
 4. Miłosz Błachowiak
+
+link do OneDrive: https://1drv.ms/u/s!AkpgHzmQCFp0fVLU_qCSUr2ZTwE?e=ct0dsU
