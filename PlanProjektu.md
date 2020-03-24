@@ -14,3 +14,9 @@ Funkcjonalności:
 2. Funkcjonalnośc zaproponowana przez grupę - Obliczanie macierzy Jordana
 3. Wybrany interfejs - TUI
 4. Zbudowanie ogólnego schematu programu
+
+# <center> <h3>Skład grupy</h3> </center>
+1. Karol Wolczyk (kierownik)
+2. Norbert Podgórski
+3. Bartosz Sroka
+4. Miłosz Błachowiak
