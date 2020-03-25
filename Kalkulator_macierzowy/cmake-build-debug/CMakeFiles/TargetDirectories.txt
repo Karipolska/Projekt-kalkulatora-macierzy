@@ -1,3 +1,0 @@
-D:/Clion_projekty/Kalkulator_macierzowy/cmake-build-debug/CMakeFiles/Kalkulator_macierzowy.dir
-D:/Clion_projekty/Kalkulator_macierzowy/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Clion_projekty/Kalkulator_macierzowy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
