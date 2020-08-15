@@ -10,7 +10,7 @@ Funkcjonalności:
 
 # <center> <h1>Ramowy plan kalkulatora macierzy</h1> </center>
 
-1. Wybranie języka programowania - C++
+1. Wybranie języka programowania - Python
 2. Funkcjonalnośc zaproponowana przez grupę - Obliczanie macierzy Jordana
 3. Wybrany interfejs - TUI
 4. Zbudowanie ogólnego schematu programu
