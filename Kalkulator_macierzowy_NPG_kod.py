@@ -6,17 +6,23 @@ def loadFile():
     print("Aby macierz została prawidłowo załadowana kolejne liczby w wierszu powinny być oddzielone"
           " spacją, a wiersze przejściem do nowej linii")
     counter = 0
-    name = str(input("Podaj nawzę pliku wraz z rozszerzeniem: "))
-    with open(name) as file:
-        for line in file:
-            if counter == 0:
-                a = line.split()
-                M = np.array([a])
-                counter += 1
-            else:
-                a = line.split()
-                M = np.vstack([M, a])
+    name = str(input("Podaj ścieżkę pliku: "))
+    try:
+        file = open(name)
+    except FileNotFoundError:
+        print("Plik pod ścieżką {} nie istnieje".format(name))
+        return None
 
+    for line in file:
+        if counter == 0:
+            a = line.split()
+            M = np.array([a])
+            counter += 1
+        else:
+            a = line.split()
+            M = np.vstack([M, a]) #czy napewno vstack?
+    file.close()
+    return M
 
 
 #funkcja wprowadzania macierzy
