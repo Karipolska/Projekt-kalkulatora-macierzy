@@ -1,6 +1,16 @@
 import numpy as np
 
-
+#funkcja sprawdzania czy macierz jest kwadratowa 
+#funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
+def isSquare(matrix):
+    (w,r) = matrix.shape
+    if w == r:
+        return True
+    else:
+        print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe.")
+        return False
+    
+    
 #funkcja wczytywania macierzy z pliku
 def loadFile():
     print("Aby macierz została prawidłowo załadowana kolejne liczby w wierszu powinny być oddzielone"
@@ -96,11 +106,11 @@ def chooseAction():
 
 
 
-print( "Witaj w programie 'Kalkulator macierzowy'.\nWprowadź swoją macierz:\n")
+print( "Witaj w programie 'Kalkulator macierzowy'.\n")
 
-enterMatrix()
 
-print(\n"Dostępne operacje: \n-dodawanie, \n-odejmowanie, \n-mnożenie, \n"
+
+print("Dostępne operacje: \n-dodawanie, \n-odejmowanie, \n-mnożenie, \n"
       "-potęgowanie, \n-wyprowadzanie postaci Jordana, \n-odwracanie macierzy, \n-czyszczenie pamięci,"
       " \n-odczytanie poprzedniego działania.\n" )
 
