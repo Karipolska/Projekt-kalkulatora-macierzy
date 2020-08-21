@@ -55,6 +55,7 @@ def enterMatrix():
             x = int(input())
             list.append(x)
         M = np.vstack([M, list])
+        return M
 
 #funkcje wykonujące działania - uzupełnić!!!
 def addition():
