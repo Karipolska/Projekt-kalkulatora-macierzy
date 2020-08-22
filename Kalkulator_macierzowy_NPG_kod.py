@@ -68,7 +68,13 @@ def multiplication():
     pass
 
 def exponentiation():
-    pass
+    #Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M
+    if isSquare(matrix) == True:
+        p = int(input("Podaj potęgę: "))
+        W = M
+        for i in range(p - 1):
+            W = W.dot(M)
+        return (W)
 
 def jordanForm():
     pass
