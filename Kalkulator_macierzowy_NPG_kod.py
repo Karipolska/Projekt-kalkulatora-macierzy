@@ -65,7 +65,9 @@ def subtraction():
     pass
 
 def multiplication():
-    pass
+    # Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M oraz M2
+    # Wywołanie funkcji sprawdzającej czy wymiary macierzy się zgadzają
+    return (M.dot(M2))
 
 def exponentiation():
     #Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M
