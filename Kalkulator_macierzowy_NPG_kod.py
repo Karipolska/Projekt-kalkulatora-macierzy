@@ -1,5 +1,24 @@
 import numpy as np
 
+#funkcja sprawdzająca czy macierze są takie same (do dodawania i odejmowania)
+def sameSize(matrix_a, matrix_b):
+    if matrix_a.shape == matrix_b.shape:
+        return True
+    else:
+        print("Macierze mają różne wymiary, nie można przeprowadzić żądanej operacji")
+        return False
+
+#funkcja sprawdzająca czy macierze mają odpowiednie wymiary do przeprowadzenia operacji mnożenia
+def canMultiply(matrix_a, matrix_b):
+    (w, r) = matrix_a.shape
+    (s, t) = matrix_b.shape
+
+    if r == s:
+        return True
+    else:
+        print("Macierze mają nieodpowiednie rozmiary do przeprowadzenia operacji mnożenia")
+        return False
+    
 #funkcja sprawdzania czy macierz jest kwadratowa 
 #funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
 def isSquare(matrix):
@@ -66,8 +85,8 @@ def subtraction():
 
 def multiplication():
     # Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M oraz M2
-    # Wywołanie funkcji sprawdzającej czy wymiary macierzy się zgadzają
-    return (M.dot(M2))
+    if canMultiply(M,M2):
+        return (M.dot(M2))
 
 def exponentiation():
     #Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M
