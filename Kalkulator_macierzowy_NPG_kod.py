@@ -5,7 +5,7 @@ def sameSize(matrix_a, matrix_b):
     if matrix_a.shape == matrix_b.shape:
         return True
     else:
-        print("Macierze mają różne wymiary, nie można przeprowadzić żądanej operacji")
+        print("Macierze mają różne wymiary, nie można przeprowadzić wybranej operacji")
         return False
 
 #funkcja sprawdzająca czy macierze mają odpowiednie wymiary do przeprowadzenia operacji mnożenia
@@ -18,7 +18,7 @@ def canMultiply(matrix_a, matrix_b):
     else:
         print("Macierze mają nieodpowiednie rozmiary do przeprowadzenia operacji mnożenia")
         return False
-    
+
 #funkcja sprawdzania czy macierz jest kwadratowa 
 #funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
 def isSquare(matrix):
@@ -77,16 +77,23 @@ def enterMatrix():
         return M
 
 #funkcje wykonujące działania - uzupełnić!!!
-def addition():
-    pass
+def addition(matrix_a, matrix_b):
+    if sameSize(matrix_a, matrix_b):
+        return np.add(matrix_a, matrix_b)
+    return None
 
-def subtraction():
-    pass
+
+def subtraction(matrix_a, matrix_b):
+    if sameSize(matrix_a, matrix_b):
+        return np.subtract(matrix_a, matrix_b)
+    return None
+
 
 def multiplication():
     # Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M oraz M2
-    if canMultiply(M,M2):
-        return (M.dot(M2))
+    if canMultiply(M, M2):
+        return M.dot(M2)
+
 
 def exponentiation():
     #Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M
@@ -95,13 +102,15 @@ def exponentiation():
         W = M
         for i in range(p - 1):
             W = W.dot(M)
-        return (W)
+        return W
 
 def jordanForm():
     pass
 
+
 def inversion():
     pass
+
 
 def clearMemory():
     pass
