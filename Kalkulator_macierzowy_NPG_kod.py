@@ -29,6 +29,16 @@ def isSquare(matrix):
         print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe.")
         return False
     
+#funkcja wyboru sposobu wprowadzenia macierzy
+def choiceMatrix():
+    c=int(input("Aby wprowadzic macierz z klawiatury wybierz 1, aby wczytac z pliku wybierz 2)
+    if c==1:
+        enterMatrix()
+    elif c==2:
+        loadFile()
+    else:
+        print("Nie wybrałeś poprawnego numeru operacji)
+        return False
     
 #funkcja wczytywania macierzy z pliku
 def loadFile():
