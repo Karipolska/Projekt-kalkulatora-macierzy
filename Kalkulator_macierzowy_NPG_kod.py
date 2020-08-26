@@ -116,7 +116,11 @@ def exponentiation():
         print (W)
 
 def jordanForm():
-    pass
+    M = choiceMatrix()
+    if isSquare(M) == True:
+        values, vectors = np.linalg.eig(M)
+        print("Wartości własne podanej macierzy to: \n", values)
+        print("Wektory własne podanej macierzy to: vectors", vectors)
 
 
 def inversion():
