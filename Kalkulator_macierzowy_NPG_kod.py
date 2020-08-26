@@ -100,9 +100,10 @@ def subtraction(matrix_a, matrix_b):
 
 
 def multiplication():
-    # Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M oraz M2
+    M = choiceMatrix()
+    M2 = choiceMatrix()
     if canMultiply(M, M2):
-        return M.dot(M2)
+        print(M.dot(M2))
 
 
 def exponentiation():
