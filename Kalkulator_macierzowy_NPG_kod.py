@@ -106,13 +106,13 @@ def multiplication():
 
 
 def exponentiation():
-    #Wywołanie funkcji wyboru sposobu wprowadzania macierzy i wprowadzenie macierzy M
+    matrix = choiceMatrix()
     if isSquare(matrix) == True:
         p = int(input("Podaj potęgę: "))
-        W = M
+        W = matrix
         for i in range(p - 1):
-            W = W.dot(M)
-        return W
+            W = W.dot(matrix)
+        print (W)
 
 def jordanForm():
     pass
