@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 #funkcja sprawdzająca czy macierze są takie same (do dodawania i odejmowania)
 def sameSize(matrix_a, matrix_b):
@@ -72,7 +73,7 @@ def enterMatrix():
 
     list = []
     for i in range (r):
-        print("Podaj liczbę w 1 wierszu")
+        print("Podaj", i+1, "liczbę w 1 wierszu")
         x = int(input())
         list.append(x)
     M = np.array([list])
@@ -80,22 +81,28 @@ def enterMatrix():
     for i in range (2, w+1):
         list = []
         for j in range (r):
-            print("Podaj liczbę w", i, "wierszu")
+            print("Podaj", j+1, "liczbę w", i, "wierszu")
             x = int(input())
             list.append(x)
         M = np.vstack([M, list])
     return M
 
 #funkcje wykonujące działania - uzupełnić!!!
-def addition(matrix_a, matrix_b):
+def addition():
+    matrix_a = choiceMatrix()
+    matrix_b = choiceMatrix()
     if sameSize(matrix_a, matrix_b):
-        return np.add(matrix_a, matrix_b)
+         M = np.add(matrix_a, matrix_b)
+         print("Suma macierzy wynosi:\n", M)
     return None
 
+def subtraction():
+    matrix_a = choiceMatrix()
+    matrix_b = choiceMatrix()
 
-def subtraction(matrix_a, matrix_b):
     if sameSize(matrix_a, matrix_b):
-        return np.subtract(matrix_a, matrix_b)
+        M = np.subtract(matrix_a, matrix_b)
+        print('Różnica macierzy wynosi:\n', M)
     return None
 
 
@@ -103,7 +110,8 @@ def multiplication():
     M = choiceMatrix()
     M2 = choiceMatrix()
     if canMultiply(M, M2):
-        print(M.dot(M2))
+        M = M.dot(M2)
+        print("Wynik mnożenia wynosi:\n", M)
 
 
 def exponentiation():
@@ -113,7 +121,7 @@ def exponentiation():
         W = matrix
         for i in range(p - 1):
             W = W.dot(matrix)
-        print (W)
+        print ("Wynik potęgowania wynosi:\n",W)
 
 def jordanForm():
     M = choiceMatrix()
@@ -135,32 +143,38 @@ def seePrevious():
     pass
 
 
+
 #funkcja wyboru operacji
 def chooseAction():
     action = input( "Podaj działanie na macierzach, które chcesz wykonać "
-                   "\n(wpisz taką nazwę działania jaka znajduje się na liście dostępnych operacji):" )
+                   "\n(wpisz taką nazwę działania jaka znajduje się na liście dostępnych operacji):\n" )
+
+    def default():
+        for i in range(0,2):
+            action = input("\nWprowadzono niepoprawną nazwę działania! Spróbuj jeszcze raz:\n")
+        sys.exit("Wprowadzono niepoprawną nazwę działania po raz trzeci! Program zostanie zakończony.")
+
 
     def switch(action):
 
         switcher = {
-            "dodawanie": addition(),
-            "odejmowanie": subtraction(),
-            "mnożenie": multiplication(),
-            "potęgowanie": exponentiation(),
-            "wyprowadzanie postaci Jordana": jordanForm(),
-            "odwracanie macierzy": inversion(),
-            "czyszczenie pamięci": clearMemory(),
-            "odczytanie poprzedniego działania": seePrevious(),
+            "dodawanie": addition,
+            "odejmowanie": subtraction,
+            "mnożenie": multiplication,
+            "potęgowanie": exponentiation,
+            "wyprowadzanie postaci Jordana": jordanForm,
+            "odwracanie macierzy": inversion,
+            "czyszczenie pamięci": clearMemory,
+            "odczytanie poprzedniego działania": seePrevious,
         }
-        return switcher.get(action,"Wprowadzono niepoprawną nazwę działania!")
+        return switcher.get(action, default)()
+
 
     switch(action)
 
 
 
 print( "Witaj w programie 'Kalkulator macierzowy'.\n")
-
-
 
 print("Dostępne operacje: \n-dodawanie, \n-odejmowanie, \n-mnożenie, \n"
       "-potęgowanie, \n-wyprowadzanie postaci Jordana, \n-odwracanie macierzy, \n-czyszczenie pamięci,"
