@@ -1,5 +1,6 @@
 import numpy as np
 import sys
+from sympy import Matrix
 
 #funkcja sprawdzająca czy macierze są takie same (do dodawania i odejmowania)
 def sameSize(matrix_a, matrix_b):
@@ -129,6 +130,9 @@ def jordanForm():
         values, vectors = np.linalg.eig(M)
         print("Wartości własne podanej macierzy to: \n", values)
         print("Wektory własne podanej macierzy to: vectors", vectors)
+        M1 = Matrix(M)
+        _, J = M1.jordan_form()
+        print("Macierz Jordana podanej macierzy to: ", J)
 
 
 def inversion():
