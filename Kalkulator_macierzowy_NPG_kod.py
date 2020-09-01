@@ -132,7 +132,12 @@ def jordanForm():
 
 
 def inversion():
-    pass
+    matrix = choiceMatrix()
+    if isSquare(matrix) == True:
+        if np.linalg.det(matrix) != 0:
+            P = matrix
+            P = np.linalg.inv(matrix)
+            print("Macierz odwrotna ma postać:\n", P)
 
 
 def clearMemory():
