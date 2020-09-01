@@ -155,10 +155,11 @@ def chooseAction():
                    "\n(wpisz taką nazwę działania jaka znajduje się na liście dostępnych operacji):\n" )
 
     def default():
-        for i in range(0,2):
-            action = input("\nWprowadzono niepoprawną nazwę działania! Spróbuj jeszcze raz:\n")
-        sys.exit("Wprowadzono niepoprawną nazwę działania po raz trzeci! Program zostanie zakończony.")
-
+        action = input("\nWprowadzono niepoprawną nazwę działania! Spróbuj jeszcze raz lub wpisz '0' by zakończyć program:\n")
+        if action == "0":
+            sys.exit("Program został zakończony.")
+        else:
+            switch(action)
 
     def switch(action):
 
