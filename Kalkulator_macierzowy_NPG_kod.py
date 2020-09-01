@@ -138,7 +138,10 @@ def inversion():
             P = matrix
             P = np.linalg.inv(matrix)
             print("Macierz odwrotna ma postać:\n", P)
-
+        else
+            print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić)
+    else
+        print("Macierz nie jest kwadratowa, nie można jej odwrócić)
 
 def clearMemory():
     pass
