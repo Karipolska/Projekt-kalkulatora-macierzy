@@ -33,7 +33,7 @@ def isSquare(matrix):
     
 #funkcja wyboru sposobu wprowadzenia macierzy
 def choiceMatrix():
-    c = int(input("Aby wprowadzic macierz z klawiatury wybierz 1, aby wczytac z pliku wybierz 2"))
+    c = int(input("Aby wprowadzic macierz z klawiatury wybierz 1, aby wczytac z pliku wybierz 2\n"))
     if c == 1:
         return enterMatrix()
     elif c == 2:
