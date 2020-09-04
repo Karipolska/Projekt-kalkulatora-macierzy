@@ -2,7 +2,21 @@ import numpy as np
 import sys
 from sympy import Matrix
 
-#funkcja sprawdzająca czy macierze są takie same (do dodawania i odejmowania)
+
+memory = [0 for i in range(10)]
+i = 0
+
+# funkcja zapisująca macierze wynikowe do listy
+def saveResult(matrix):
+    global i
+    global memory
+    memory[i] = matrix
+    i += 1
+    if i == 10:
+        i = 0
+
+
+# funkcja sprawdzająca czy macierze są takie same (do dodawania i odejmowania)
 def sameSize(matrix_a, matrix_b):
     if matrix_a.shape == matrix_b.shape:
         return True
@@ -10,7 +24,8 @@ def sameSize(matrix_a, matrix_b):
         print("Macierze mają różne wymiary, nie można przeprowadzić wybranej operacji")
         return False
 
-#funkcja sprawdzająca czy macierze mają odpowiednie wymiary do przeprowadzenia operacji mnożenia
+
+# funkcja sprawdzająca czy macierze mają odpowiednie wymiary do przeprowadzenia operacji mnożenia
 def canMultiply(matrix_a, matrix_b):
     (w, r) = matrix_a.shape
     (s, t) = matrix_b.shape
@@ -21,19 +36,21 @@ def canMultiply(matrix_a, matrix_b):
         print("Macierze mają nieodpowiednie rozmiary do przeprowadzenia operacji mnożenia")
         return False
 
-#funkcja sprawdzania czy macierz jest kwadratowa 
-#funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
+
+# funkcja sprawdzania czy macierz jest kwadratowa
+# funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
 def isSquare(matrix):
-    (w,r) = matrix.shape
+    (w, r) = matrix.shape
     if w == r:
         return True
     else:
         print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe.")
         return False
-    
-#funkcja wyboru sposobu wprowadzenia macierzy
+
+
+# funkcja wyboru sposobu wprowadzenia macierzy
 def choiceMatrix():
-    c = int(input("Aby wprowadzic macierz z klawiatury wybierz 1, aby wczytac z pliku wybierz 2"))
+    c = int(input("Aby wprowadzic macierz z klawiatury wybierz 1, aby wczytac z pliku wybierz 2\n"))
     if c == 1:
         return enterMatrix()
     elif c == 2:
@@ -41,8 +58,9 @@ def choiceMatrix():
     else:
         print("Nie wybrałeś poprawnego numeru operacji")
         return False
-    
-#funkcja wczytywania macierzy z pliku
+
+
+# funkcja wczytywania macierzy z pliku
 def loadFile():
     print("Aby macierz została prawidłowo załadowana kolejne liczby w wierszu powinny być oddzielone"
           " spacją, a wiersze przejściem do nowej linii")
@@ -61,41 +79,43 @@ def loadFile():
             counter += 1
         else:
             a = line.split()
-            M = np.vstack([M, a]) #czy napewno vstack?
+            M = np.vstack([M, a])  # czy napewno vstack?
     file.close()
     return M
 
 
-#funkcja wprowadzania macierzy
+# funkcja wprowadzania macierzy
 def enterMatrix():
-
     w = int(input("Podaj liczbę wierszy macierzy: "))
     r = int(input("Podaj liczbę kolumn macierzy: "))
 
     list = []
-    for i in range (r):
-        print("Podaj", i+1, "liczbę w 1 wierszu")
+    for i in range(r):
+        print("Podaj", i + 1, "liczbę w 1 wierszu")
         x = int(input())
         list.append(x)
     M = np.array([list])
 
-    for i in range (2, w+1):
+    for i in range(2, w + 1):
         list = []
-        for j in range (r):
-            print("Podaj", j+1, "liczbę w", i, "wierszu")
+        for j in range(r):
+            print("Podaj", j + 1, "liczbę w", i, "wierszu")
             x = int(input())
             list.append(x)
         M = np.vstack([M, list])
     return M
 
-#funkcje wykonujące działania - uzupełnić!!!
+
+# funkcje wykonujące działania - uzupełnić!!!
 def addition():
     matrix_a = choiceMatrix()
     matrix_b = choiceMatrix()
     if sameSize(matrix_a, matrix_b):
-         M = np.add(matrix_a, matrix_b)
-         print("Suma macierzy wynosi:\n", M)
+        M = np.add(matrix_a, matrix_b)
+        print("Suma macierzy wynosi:\n", M)
+        saveResult(M)
     return None
+
 
 def subtraction():
     matrix_a = choiceMatrix()
@@ -104,6 +124,7 @@ def subtraction():
     if sameSize(matrix_a, matrix_b):
         M = np.subtract(matrix_a, matrix_b)
         print('Różnica macierzy wynosi:\n', M)
+        saveResult(M)
     return None
 
 
@@ -113,6 +134,8 @@ def multiplication():
     if canMultiply(M, M2):
         M = M.dot(M2)
         print("Wynik mnożenia wynosi:\n", M)
+        saveResult(M)
+
 
 
 def exponentiation():
@@ -122,7 +145,9 @@ def exponentiation():
         W = matrix
         for i in range(p - 1):
             W = W.dot(matrix)
-        print ("Wynik potęgowania wynosi:\n",W)
+        print ("Wynik potęgowania wynosi:\n", W)
+        saveResult(W)
+
 
 def jordanForm():
     M = choiceMatrix()
@@ -133,6 +158,7 @@ def jordanForm():
         M1 = Matrix(M)
         _, J = M1.jordan_form()
         print("Macierz Jordana podanej macierzy to: ", J)
+        saveResult(J)
 
 
 def inversion():
@@ -142,10 +168,12 @@ def inversion():
             P = matrix
             P = np.linalg.inv(matrix)
             print("Macierz odwrotna ma postać:\n", P)
-        else
-            print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić)
-    else
-        print("Macierz nie jest kwadratowa, nie można jej odwrócić)
+            saveResult(P)
+        else:
+            print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić")
+    else:
+        print("Macierz nie jest kwadratowa, nie można jej odwrócić")
+
 
 def clearMemory():
     pass
@@ -155,14 +183,14 @@ def seePrevious():
     pass
 
 
-
-#funkcja wyboru operacji
+# funkcja wyboru operacji
 def chooseAction():
-    action = input( "Podaj działanie na macierzach, które chcesz wykonać "
-                   "\n(wpisz taką nazwę działania jaka znajduje się na liście dostępnych operacji):\n" )
+    action = input("Podaj działanie na macierzach, które chcesz wykonać "
+                   "\n(wpisz taką nazwę działania jaka znajduje się na liście dostępnych operacji):\n")
 
     def default():
-        action = input("\nWprowadzono niepoprawną nazwę działania! Spróbuj jeszcze raz lub wpisz '0' by zakończyć program:\n")
+        action = input(
+            "\nWprowadzono niepoprawną nazwę działania! Spróbuj jeszcze raz lub wpisz '0' by zakończyć program:\n")
         if action == "0":
             sys.exit("Program został zakończony.")
         else:
@@ -182,15 +210,25 @@ def chooseAction():
         }
         return switcher.get(action, default)()
 
-
     switch(action)
+    next()
 
 
+def next():
+    w = input("Aby kontynuować wpisz 1, aby wyjść wpisz 2\n")
+    if w == '1':
+        chooseAction()
+    if w == '2':
+        sys.exit("Program został zakończony")
+    else:
+        print("Wybrałeś złą opcję")
+        next()
 
-print( "Witaj w programie 'Kalkulator macierzowy'.\n")
+
+print("Witaj w programie 'Kalkulator macierzowy'.\n")
 
 print("Dostępne operacje: \n-dodawanie, \n-odejmowanie, \n-mnożenie, \n"
       "-potęgowanie, \n-wyprowadzanie postaci Jordana, \n-odwracanie macierzy, \n-czyszczenie pamięci,"
-      " \n-odczytanie poprzedniego działania.\n" )
+      " \n-odczytanie poprzedniego działania.\n")
 
 chooseAction()
