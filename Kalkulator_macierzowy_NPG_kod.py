@@ -184,7 +184,17 @@ def chooseAction():
 
 
     switch(action)
-
+    next()
+    
+def next():
+    w = input("Aby kontynuować wpisz 1, aby wyjść wpisz 2\n")
+    if w == '1':
+        chooseAction()
+    if w == '2':
+        sys.exit("Program został zakończony")
+    else:
+        print("Wybrałeś złą opcję")
+        next()
 
 
 print( "Witaj w programie 'Kalkulator macierzowy'.\n")
