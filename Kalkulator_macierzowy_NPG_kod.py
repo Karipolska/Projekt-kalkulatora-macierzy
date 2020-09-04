@@ -168,18 +168,12 @@ def inversion():
             P = matrix
             P = np.linalg.inv(matrix)
             print("Macierz odwrotna ma postać:\n", P)
-<<<<<<< HEAD
             saveResult(P)
-=======
->>>>>>> a4109b8bb0db802318dee3a54190b4bf9d2b2ee6
         else:
             print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić")
     else:
         print("Macierz nie jest kwadratowa, nie można jej odwrócić")
-<<<<<<< HEAD
 
-=======
->>>>>>> a4109b8bb0db802318dee3a54190b4bf9d2b2ee6
 
 def clearMemory():
     pass
@@ -218,9 +212,7 @@ def chooseAction():
 
     switch(action)
     next()
-<<<<<<< HEAD
 
-=======
     
 def next():
     w = input("Aby kontynuować wpisz 1, aby wyjść wpisz 2\n")
@@ -231,7 +223,6 @@ def next():
     else:
         print("Wybrałeś złą opcję")
         next()
->>>>>>> a4109b8bb0db802318dee3a54190b4bf9d2b2ee6
 
 def next():
     w = input("Aby kontynuować wpisz 1, aby wyjść wpisz 2\n")
