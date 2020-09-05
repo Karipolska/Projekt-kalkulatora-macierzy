@@ -176,7 +176,8 @@ def inversion():
 
 
 def clearMemory():
-    pass
+    global memory
+    memory = [0 for i in range(10)]
 
 
 def seePrevious():
