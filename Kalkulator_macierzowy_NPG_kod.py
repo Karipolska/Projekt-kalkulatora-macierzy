@@ -181,7 +181,13 @@ def clearMemory():
 
 
 def seePrevious():
-    pass
+    x = int(input("Ile działań wstecz chcesz się cofnąć: "))
+    x -= 1
+    try:
+        if (memory[x] != 0).any():
+            print(memory[x])
+    except AttributeError:
+        print("Brak zapisanego wyniku")
 
 
 # funkcja wyboru operacji
