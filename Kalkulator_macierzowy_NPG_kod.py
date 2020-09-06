@@ -105,7 +105,7 @@ def enterMatrix():
         M = np.vstack([M, list])
     return M
 
-
+#funkcja wprowadzająca macierz będącą wynikiem jednego z poprzednich działań
 def loadPrevious():
     x = int(input("Wynik którego z działań chcesz użyć: "))
     x -= 1
