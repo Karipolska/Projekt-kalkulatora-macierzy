@@ -106,6 +106,17 @@ def enterMatrix():
     return M
 
 
+def loadPrevious():
+    x = int(input("Wynik którego z działań chcesz użyć: "))
+    x -= 1
+    try:
+        if (memory[x] != 0).any():
+            print("\n")
+            return memory[x]
+    except AttributeError:
+        print("Brak zapisanego wyniku")
+
+
 # funkcje wykonujące działania - uzupełnić!!!
 def addition():
     matrix_a = choiceMatrix()
