@@ -181,7 +181,7 @@ def clearMemory():
 
 
 def seePrevious():
-    x = int(input("Ile działań wstecz chcesz się cofnąć: "))
+    x = int(input("Wynik którego z działań chcesz zobaczyć: "))
     x -= 1
     try:
         if (memory[x] != 0).any():
