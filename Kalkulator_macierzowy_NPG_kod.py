@@ -187,12 +187,14 @@ def inversion():
     else:
         print("Macierz nie jest kwadratowa, nie można jej odwrócić")
 
-
+        
+#funkcja czyszczenia pamięci
 def clearMemory():
     global memory
     memory = [0 for i in range(10)]
 
 
+#funkcja odczytywania wyniku jednego z poprzenich działań
 def seePrevious():
     x = int(input("Wynik którego z działań chcesz zobaczyć: "))
     x -= 1
