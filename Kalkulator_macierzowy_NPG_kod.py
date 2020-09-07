@@ -126,7 +126,7 @@ def addition():
     matrix_b = choiceMatrix()
     if sameSize(matrix_a, matrix_b):
         M = np.add(matrix_a, matrix_b)
-        print("Suma macierzy wynosi:\n", M)
+        print("Suma macierzy wynosi:\n", M, "\n")
         saveResult(M)
     return None
 
@@ -137,7 +137,7 @@ def subtraction():
 
     if sameSize(matrix_a, matrix_b):
         M = np.subtract(matrix_a, matrix_b)
-        print('Różnica macierzy wynosi:\n', M)
+        print('Różnica macierzy wynosi:\n', M, "\n")
         saveResult(M)
     return None
 
@@ -147,7 +147,7 @@ def multiplication():
     M2 = choiceMatrix()
     if canMultiply(M, M2):
         M = M.dot(M2)
-        print("Wynik mnożenia wynosi:\n", M)
+        print("Wynik mnożenia wynosi:\n", M, "\n")
         saveResult(M)
 
 
@@ -158,7 +158,7 @@ def exponentiation():
         W = matrix
         for i in range(p - 1):
             W = W.dot(matrix)
-        print("Wynik potęgowania wynosi:\n", W)
+        print("Wynik potęgowania wynosi:\n", W, "\n")
         saveResult(W)
 
 
@@ -170,7 +170,7 @@ def jordanForm():
         print("Wektory własne podanej macierzy to: vectors", vectors)
         M1 = Matrix(M)
         _, J = M1.jordan_form()
-        print("Macierz Jordana podanej macierzy to: ", J)
+        print("Macierz Jordana podanej macierzy to: ", J, "\n")
         saveResult(J)
 
 
@@ -180,7 +180,7 @@ def inversion():
         if np.linalg.det(matrix) != 0:
             P = matrix
             P = np.linalg.inv(matrix)
-            print("Macierz odwrotna ma postać:\n", P)
+            print("Macierz odwrotna ma postać:\n", P, "\n")
             saveResult(P)
         else:
             print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić")
@@ -200,7 +200,7 @@ def seePrevious():
     x -= 1
     try:
         if (memory[x] != 0).any():
-            print(memory[x])
+            print(memory[x], "\n")
     except AttributeError:
         print("Brak zapisanego wyniku")
 
