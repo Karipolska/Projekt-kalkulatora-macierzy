@@ -197,10 +197,9 @@ def clearMemory():
 #funkcja odczytywania wyniku jednego z poprzenich działań
 def seePrevious():
     x = int(input("Wynik którego z działań chcesz zobaczyć: "))
-    x -= 1
     try:
-        if (memory[x] != 0).any():
-            print(memory[x], "\n")
+        if (memory[x-1] != 0).any():
+            print(memory[x-1], "\n")
     except AttributeError:
         print("Brak zapisanego wyniku \n")
 
