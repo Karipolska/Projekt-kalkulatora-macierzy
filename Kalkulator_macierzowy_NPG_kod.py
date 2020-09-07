@@ -39,8 +39,7 @@ def canMultiply(matrix_a, matrix_b):
 # funkcja sprawdzania czy macierz jest kwadratowa
 # funkcja zwraca parametr True, gdy przekazana do niej macierz jest kwadratowa, w przeciwnym wypadku wyświetla komunikat o błędzie i zwraca parametr False)
 def isSquare(matrix):
-    (w, r) = matrix.shape
-    if w == r:
+    if matrix.shape[0] == matrix.shape[1]:
         return True
     print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe.")
     return False
@@ -49,9 +48,9 @@ def isSquare(matrix):
 # funkcja wyboru sposobu wprowadzenia macierzy
 def choiceMatrix():
     c = input("Wybierz sposób wprowadzania macierzy:\n"
-                  "[1] z klawiatury\n"
-                  "[2] z pliku\n"
-                  "[3] użycie macierzy wynikowej z historii działań\n")
+              "[1] z klawiatury\n"
+              "[2] z pliku\n"
+              "[3] użycie macierzy wynikowej z historii działań\n")
     if c == '1':
         return enterMatrix()
     elif c == '2':
@@ -108,6 +107,7 @@ def enterMatrix():
         M = np.vstack([M, list])
     return M
 
+
 #funkcja wprowadzająca macierz będącą wynikiem jednego z poprzednich działań
 def loadPrevious():
     x = int(input("Wynik którego z działań chcesz użyć: "))
@@ -149,7 +149,6 @@ def multiplication():
         M = M.dot(M2)
         print("Wynik mnożenia wynosi:\n", M)
         saveResult(M)
-
 
 
 def exponentiation():
