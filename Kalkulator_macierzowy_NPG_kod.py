@@ -48,19 +48,19 @@ def isSquare(matrix):
 
 # funkcja wyboru sposobu wprowadzenia macierzy
 def choiceMatrix():
-    c = int(input("Wybierz sposób wprowadzania macierzy:\n"
+    c = input("Wybierz sposób wprowadzania macierzy:\n"
                   "[1] z klawiatury\n"
                   "[2] z pliku\n"
-                  "[3] użycie macierzy wynikowej z historii działań\n"))
-    if c == 1:
+                  "[3] użycie macierzy wynikowej z historii działań\n")
+    if c == '1':
         return enterMatrix()
-    elif c == 2:
+    elif c == '2':
         return loadFile()
-    elif c == 3:
+    elif c == '3':
         return loadPrevious()
     else:
         print("Wprowadzono nieprawidłowy numer operacji")
-        return False
+        choiceMatrix()
 
 
 # funkcja wczytywania macierzy z pliku
