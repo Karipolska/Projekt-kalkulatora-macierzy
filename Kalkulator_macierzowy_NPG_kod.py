@@ -21,7 +21,7 @@ def saveResult(matrix):
 def sameSize(matrix_a, matrix_b):
     if matrix_a.shape == matrix_b.shape:
         return True
-    print("Macierze mają różne wymiary, nie można przeprowadzić wybranej operacji")
+    print("Macierze mają różne wymiary, nie można przeprowadzić wybranej operacji \n")
     return False
 
 
@@ -32,7 +32,7 @@ def canMultiply(matrix_a, matrix_b):
 
     if r == s:
         return True
-    print("Macierze mają nieodpowiednie rozmiary do przeprowadzenia operacji mnożenia")
+    print("Macierze mają nieodpowiednie rozmiary do przeprowadzenia operacji mnożenia \n")
     return False
 
 
@@ -41,7 +41,7 @@ def canMultiply(matrix_a, matrix_b):
 def isSquare(matrix):
     if matrix.shape[0] == matrix.shape[1]:
         return True
-    print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe.")
+    print("Macierz nie jest kwadratowa, wykonanie działania jest niemożliwe. \n")
     return False
 
 
@@ -58,7 +58,7 @@ def choiceMatrix():
     elif c == '3':
         return loadPrevious()
     else:
-        print("Wprowadzono nieprawidłowy numer operacji")
+        print("Wprowadzono nieprawidłowy numer operacji \n")
         choiceMatrix()
 
 
@@ -117,7 +117,7 @@ def loadPrevious():
             print("\n")
             return memory[x]
     except AttributeError:
-        print("Brak zapisanego wyniku")
+        print("Brak zapisanego wyniku \n")
 
 
 # funkcje wykonujące działania
@@ -183,9 +183,9 @@ def inversion():
             print("Macierz odwrotna ma postać:\n", P, "\n")
             saveResult(P)
         else:
-            print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić")
+            print("Wyznacznik macierzy wynosi 0, nie można jej odwrócić \n")
     else:
-        print("Macierz nie jest kwadratowa, nie można jej odwrócić")
+        print("Macierz nie jest kwadratowa, nie można jej odwrócić \n")
 
         
 #funkcja czyszczenia pamięci
@@ -202,7 +202,7 @@ def seePrevious():
         if (memory[x] != 0).any():
             print(memory[x], "\n")
     except AttributeError:
-        print("Brak zapisanego wyniku")
+        print("Brak zapisanego wyniku \n")
 
 
 # funkcja wyboru operacji
