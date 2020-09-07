@@ -206,9 +206,9 @@ def seePrevious():
 
 # funkcja wyboru operacji
 def chooseAction():
-    print("Dostępne operacje: \n-dodawanie, \n-odejmowanie, \n-mnożenie, \n"
-          "-potęgowanie, \n-wyprowadzanie postaci Jordana, \n-odwracanie macierzy, \n-czyszczenie pamięci,"
-          " \n-odczytanie poprzedniego działania.\n")
+    print("Dostępne operacje: \n[1] dodawanie / add, \n[2] odejmowanie / sub, \n[3] mnożenie / mul, \n"
+          "[4] potęgowanie / exp, \n[5] wyprowadzanie postaci Jordana / Jordan, \n[6] odwracanie macierzy / inv, \n"
+          "[7] czyszczenie pamięci / clear, \n[8] odczytanie poprzedniego działania / history.\n")
     action = input("Podaj działanie na macierzach, które chcesz wykonać:\n")
 
     def default():
@@ -223,13 +223,29 @@ def chooseAction():
 
         switcher = {
             "dodawanie": addition,
+            "1": addition,
+            "add": addition,
             "odejmowanie": subtraction,
+            "2": subtraction,
+            "sub": subtraction,
             "mnożenie": multiplication,
+            "3": multiplication,
+            "mul": multiplication,
             "potęgowanie": exponentiation,
+            "4": exponentiation,
+            "exp": exponentiation,
             "wyprowadzanie postaci Jordana": jordanForm,
+            "5": jordanForm,
+            "Jordan": jordanForm,
             "odwracanie macierzy": inversion,
+            "6": inversion,
+            "inv": inversion,
             "czyszczenie pamięci": clearMemory,
+            "7": clearMemory,
+            "clear": clearMemory,
             "odczytanie poprzedniego działania": seePrevious,
+            "8": seePrevious,
+            "history": seePrevious,
         }
         return switcher.get(action, default)()
 
@@ -252,5 +268,8 @@ def next():
 
 print("Witaj w programie 'Kalkulator macierzowy'.\n")
 
-print("Aby działanie zostało wykonane należy wprowadzić pełną nazwę z listy\n")
+print("Aby działanie zostało wykonane należy wprowadzić jedną z trzech opcji\n"
+      "  -numer działania\n"
+      "  -pełną polską nazwę z listy\n"
+      "  -skrót\n")
 chooseAction()
