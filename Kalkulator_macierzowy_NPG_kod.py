@@ -111,11 +111,10 @@ def enterMatrix():
 #funkcja wprowadzająca macierz będącą wynikiem jednego z poprzednich działań
 def loadPrevious():
     x = int(input("Wynik którego z działań chcesz użyć: "))
-    x -= 1
     try:
-        if (memory[x] != 0).any():
+        if (memory[x-1] != 0).any():
             print("\n")
-            return memory[x]
+            return memory[x-1]
     except AttributeError:
         print("Brak zapisanego wyniku \n")
 
